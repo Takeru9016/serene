@@ -3,11 +3,19 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
+    "check": "ultracite check",
+    "dev": "next dev",
+    "fix": "ultracite fix",
+    "format": "biome format --write",
     "lint": "biome check",
-    "format": "biome format --write"
+    "prepare": "husky",
+    "start": "next start"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "ultracite fix"
+    ]
   },
   "dependencies": {
     "next": "16.3.0",
@@ -15,13 +23,16 @@
     "react-dom": "19.2.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.4.2",
+    "@biomejs/biome": "2.5.6",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "husky": "^9.1.7",
+    "lefthook": "^2.1.10",
     "tailwindcss": "^4",
-    "typescript": "^5"
+    "typescript": "^5",
+    "ultracite": "7.10.4"
   },
   "packageManager": "pnpm@11.21.0"
 }

@@ -10,10 +10,10 @@ here.
   - [x] Fonts loaded (Playfair Display, Jost, Dancing Script)
   - [x] `src/lib/content.ts` scaffolded with all locked copy
 
-- [ ] **Phase 1 — Shell**
-  - [ ] `layout.tsx` — conditional nav, audio element
-  - [ ] `template.tsx` — fade transition
-  - [ ] Progress indicator component (bloom dots)
+- [x] **Phase 1 — Shell**
+  - [x] `layout.tsx` — conditional nav, audio element
+  - [x] `template.tsx` — fade transition
+  - [x] Progress indicator component (bloom dots)
 
 - [ ] **Phase 2 — `/`**
 - [ ] **Phase 3 — `/wishes`**
@@ -39,5 +39,5 @@ here.
 
 ---
 
-**Active Task:** Phase 1 — Shell
-**Last Completed:** Phase 0 — Setup
+**Active Task:** Phase 2 — `/`
+**Last Completed:** Phase 1 — Shell
