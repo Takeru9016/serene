@@ -2,14 +2,14 @@
 // hardcode copy inline in a page component. See CLAUDE.md rule 2.
 
 export const home = {
+  cta: "Begin →",
   eyebrow: "happy birthday",
-  title: "Happy Birthday, Serene", // swap nickname if desired
   subtitle: "One more year of you, and I'm grateful for every bit of it.",
+  title: "Happy Birthday, Serene", // swap nickname if desired
 };
 
 export const wishes = {
   eyebrow: "a few wishes",
-  title: "For you, today",
   items: [
     "May this year bring you the kind of steady you've been working toward — not just a paycheck that shows up, but work that actually feels like yours. You've put in the effort. Let it start paying you back.",
     "Madame, you take care of everyone before you take care of yourself. This year, I hope your body gets some of the same attention you give everyone else's — more rest, fewer things pushed through on empty.",
@@ -17,36 +17,36 @@ export const wishes = {
     "Spicy food you pretend isn't too spicy. A painting you started and forgot to finish. Coffee at whatever hour you decide it's coffee o'clock. A cat that has clearly decided you belong to it. May you get more of exactly this — the small, useless, wonderful things that are just for you.",
     "You've been working on yourself this past year — your health, your finances, your life — quietly, without needing anyone to notice. I noticed, Dumbi. And I'm proud of you for it. Here's to the next year being a little easier than the last one earned you.",
   ],
+  title: "For you, today",
 };
 
 // PLACEHOLDER — do not treat as final. See CLAUDE.md open blockers.
 export const gift = {
-  eyebrow: "i got you something",
-  title: "For you",
   body: [
     "I wanted to get you [gift name/description] — [why you picked it: what made you think of her, what it says, what it's for].",
     "It's not much, but [what you hope it means — comfort, something she mentioned once, something just for her].",
     "Happy birthday, Serene. I hope you like it.",
   ],
+  eyebrow: "i got you something",
   image: null as string | null, // set once real photo exists
+  title: "For you",
 };
 
 // PLACEHOLDER — do not draft this. It's the user's own writing. See CLAUDE.md.
 export const poetry = {
+  body: "", // one long poem, not multiple short ones
   eyebrow: "written for you",
   title: "", // fill in once written
-  body: "", // one long poem, not multiple short ones
 };
 
 // Title locked. Content is the user's own writing — do not draft it.
 export const reasons = {
   eyebrow: "just some of them",
-  title: "Reasons I'm Not Letting You Go",
   items: [] as string[],
+  title: "Reasons I'm Not Letting You Go",
 };
 
 export const letter = {
-  eyebrow: "one more thing",
   body: [
     "There's a lot I could say here, and most of it I've said in pieces already — in the wishes, in the reasons, in everything before this page. So I'll just say the part I don't usually say out loud.",
     "I want you to feel safe with me. Not just welcomed — safe. The kind where you don't have to hold everything together before you walk through the door.",
@@ -57,5 +57,6 @@ export const letter = {
     "No matter what — I'm going to keep showing up. That's not a promise I'm making today because it's your birthday. It's just true, and it'll still be true tomorrow.",
     "Happy birthday.",
   ],
+  eyebrow: "one more thing",
   signature: "Dumbo",
 };

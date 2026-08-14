@@ -15,7 +15,7 @@ here.
   - [x] `template.tsx` — fade transition
   - [x] Progress indicator component (bloom dots)
 
-- [ ] **Phase 2 — `/`**
+- [x] **Phase 2 — `/`**
 - [ ] **Phase 3 — `/wishes`**
 - [ ] **Phase 4 — `/gift`** *(blocked — see CLAUDE.md open blockers)*
 - [ ] **Phase 5 — `/poetry`** *(blocked — copy pending)*
@@ -39,5 +39,5 @@ here.
 
 ---
 
-**Active Task:** Phase 2 — `/`
-**Last Completed:** Phase 1 — Shell
+**Active Task:** Phase 3 — `/wishes`
+**Last Completed:** Phase 2 — `/`
