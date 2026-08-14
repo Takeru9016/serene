@@ -16,7 +16,7 @@ here.
   - [x] Progress indicator component (bloom dots)
 
 - [x] **Phase 2 — `/`**
-- [ ] **Phase 3 — `/wishes`**
+- [x] **Phase 3 — `/wishes`**
 - [ ] **Phase 4 — `/gift`** *(blocked — see CLAUDE.md open blockers)*
 - [ ] **Phase 5 — `/poetry`** *(blocked — copy pending)*
 - [ ] **Phase 6 — `/reasons`** *(blocked — copy pending)*
@@ -39,5 +39,5 @@ here.
 
 ---
 
-**Active Task:** Phase 3 — `/wishes`
-**Last Completed:** Phase 2 — `/`
+**Active Task:** Phase 4 — `/gift` *(blocked — see CLAUDE.md open blockers)*
+**Last Completed:** Phase 3 — `/wishes`
