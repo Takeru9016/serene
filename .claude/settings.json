@@ -1,0 +1,37 @@
+{
+  "model": "claude-sonnet-5",
+  "defaultMode": "acceptEdits",
+  "permissions": {
+    "allow": [
+      "Bash(pnpm *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(git status)",
+      "Bash(git log *)",
+      "Bash(git diff *)",
+      "Bash(node *)",
+      "Bash(ls *)",
+      "Bash(mkdir *)",
+      "Bash(touch *)"
+    ],
+    "deny": [
+      "Bash(rm -rf *)",
+      "Bash(curl *)",
+      "Bash(wget *)",
+      "Bash(git push --force*)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Write|Edit|MultiEdit",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "pnpm tsc --noEmit"
+          }
+        ]
+      }
+    ]
+  }
+}
