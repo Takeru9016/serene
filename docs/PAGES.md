@@ -35,7 +35,8 @@ ribbon graphic until clicked
 
 ## `/poetry` — Poetry
 
-**Status:** mine to write, one long poem (not multiple short ones — layout
+**Status:** template built with placeholder poem, blocked on real writing —
+see CLAUDE.md blockers. One long poem (not multiple short ones — layout
 reflects this)
 **Layout:** single continuous typographic block, generous stanza spacing —
 not stacked cards
@@ -45,7 +46,8 @@ page gets)
 
 ## `/reasons` — "Reasons I'm Not Letting You Go"
 
-**Status:** title locked, content mine to write
+**Status:** template built with placeholder items, title locked, real
+content still mine to write — see CLAUDE.md blockers
 **Layout:** numbered grid, 2-col desktop / 1-col mobile
 **Interaction:** each card blooms in (fade + slight scale from a bud shape),
 staggered on scroll

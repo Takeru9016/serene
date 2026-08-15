@@ -32,17 +32,33 @@ export const gift = {
   title: "For you",
 };
 
-// PLACEHOLDER — do not draft this. It's the user's own writing. See CLAUDE.md.
+// PLACEHOLDER — dummy copy for layout only. Do not draft this for real. It's
+// the user's own writing. See CLAUDE.md.
 export const poetry = {
-  body: "", // one long poem, not multiple short ones
+  body: `[stanza one — placeholder line, placeholder line, placeholder line]
+[placeholder line, placeholder line, placeholder line]
+
+[stanza two — placeholder line, placeholder line]
+[placeholder line, placeholder line, placeholder line, placeholder line]
+
+[stanza three — placeholder line, placeholder line, placeholder line]
+[placeholder line, placeholder line]`, // one long poem, not multiple short ones — replace entirely
   eyebrow: "written for you",
-  title: "", // fill in once written
+  title: "[poem title placeholder]", // fill in once written
 };
 
-// Title locked. Content is the user's own writing — do not draft it.
+// Title locked. Items below are dummy placeholders for layout only — do not
+// treat as real content. It's the user's own writing. See CLAUDE.md.
 export const reasons = {
   eyebrow: "just some of them",
-  items: [] as string[],
+  items: [
+    "[placeholder reason one — a short line]",
+    "[placeholder reason two — a short line]",
+    "[placeholder reason three — a short line]",
+    "[placeholder reason four — a short line]",
+    "[placeholder reason five — a short line]",
+    "[placeholder reason six — a short line]",
+  ] as string[],
   title: "Reasons I'm Not Letting You Go",
 };
 
