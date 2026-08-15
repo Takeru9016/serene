@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeadingGlow } from "@/components/shared/heading-glow";
 import { ProgressDots } from "@/components/shared/progress-dots";
 import { ReasonCards } from "@/components/shared/reason-cards";
 import { reasons } from "@/lib/content";
@@ -11,9 +12,11 @@ export default function Reasons() {
           <p className="font-sans text-orchid text-sm uppercase tracking-[0.3em]">
             {reasons.eyebrow}
           </p>
-          <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
-            {reasons.title}
-          </h2>
+          <HeadingGlow>
+            <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
+              {reasons.title}
+            </h2>
+          </HeadingGlow>
         </div>
         <ReasonCards items={reasons.items} />
         <Link

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeadingGlow } from "@/components/shared/heading-glow";
 import { NightMotif } from "@/components/shared/night-motif";
 import { home } from "@/lib/content";
 
@@ -10,9 +11,11 @@ export default function Home() {
         <p className="font-sans text-orchid text-sm uppercase tracking-[0.3em]">
           {home.eyebrow}
         </p>
-        <h1 className="font-display text-4xl text-violet-deep italic sm:text-5xl">
-          {home.title}
-        </h1>
+        <HeadingGlow>
+          <h1 className="font-display text-4xl text-violet-deep italic sm:text-5xl">
+            {home.title}
+          </h1>
+        </HeadingGlow>
         <p className="font-light font-sans text-ink text-lg">{home.subtitle}</p>
         <Link
           className="mt-4 font-sans text-lg text-violet transition-[filter] hover:drop-shadow-[0_0_8px_var(--color-orchid)]"

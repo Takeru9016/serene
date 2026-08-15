@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeadingGlow } from "@/components/shared/heading-glow";
 import { PolaroidPhoto } from "@/components/shared/polaroid-photo";
 import { ProgressDots } from "@/components/shared/progress-dots";
 import { RibbonReveal } from "@/components/shared/ribbon-reveal";
@@ -12,9 +13,11 @@ export default function Gift() {
           <p className="font-sans text-orchid text-sm uppercase tracking-[0.3em]">
             {gift.eyebrow}
           </p>
-          <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
-            {gift.title}
-          </h2>
+          <HeadingGlow>
+            <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
+              {gift.title}
+            </h2>
+          </HeadingGlow>
         </div>
 
         <RibbonReveal>

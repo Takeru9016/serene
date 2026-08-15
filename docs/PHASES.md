@@ -22,12 +22,13 @@ here.
 - [x] **Phase 6 — `/reasons`** *(built with placeholder numbered grid + bloom-in reveal — real reasons still pending, see CLAUDE.md open blockers)*
 - [x] **Phase 7 — `/letter`**
 
-- [ ] **Phase 8 — Polish** *(only after all pages above are checked)*
-  - [ ] Ambient grain + heading glow
-  - [ ] Night motif on Home + Letter
-  - [ ] Music toggle
-  - [ ] Responsive pass, all pages
-  - [ ] Page-turn transition upgrade (optional)
+- [x] **Phase 8 — Polish** *(only after all pages above are checked)*
+  - [x] Ambient grain + heading glow
+  - [x] Night motif on Home + Letter
+  - [x] Music toggle *(layout.tsx placement confirmed correct; `public/audio/ambient.mp3` now present, build confirmed clean)*
+  - [x] Responsive pass, all pages
+  - [x] Restraint audit *(Home + Poetry now run 2 concurrent ambient elements — NightMotif/poem-glow plus the new heading glow — by explicit decision to apply heading glow site-wide; see session note)*
+  - [x] Page-turn transition upgrade (optional)
 
 - [ ] **Phase 9 — Domain & Access** *(last, right before sending the link)*
   - [ ] `GATE_PASSCODE` and `GATE_TOKEN` generated and set in Vercel
@@ -39,5 +40,5 @@ here.
 
 ---
 
-**Active Task:** Phase 8 — Polish *(blocked until real poem/reasons copy lands — see CLAUDE.md open blockers)*
-**Last Completed:** Phase 5 — `/poetry` and Phase 6 — `/reasons` (placeholder content)
+**Active Task:** Phase 9 — Domain & Access is next. Phase 8 is fully complete.
+**Last Completed:** Phase 8 — Polish, all 5 items (grain/glow, night motif, music toggle, responsive pass, restraint audit, page-turn transition)

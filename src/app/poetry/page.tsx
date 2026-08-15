@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { HeadingGlow } from "@/components/shared/heading-glow";
 import { ProgressDots } from "@/components/shared/progress-dots";
 import { poetry } from "@/lib/content";
 
@@ -10,9 +11,11 @@ export default function Poetry() {
           <p className="font-sans text-orchid text-sm uppercase tracking-[0.3em]">
             {poetry.eyebrow}
           </p>
-          <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
-            {poetry.title}
-          </h2>
+          <HeadingGlow>
+            <h2 className="font-display text-3xl text-violet-deep italic sm:text-4xl">
+              {poetry.title}
+            </h2>
+          </HeadingGlow>
         </div>
 
         <div className="relative w-full">

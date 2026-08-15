@@ -52,7 +52,7 @@ export function Nav() {
 
   return (
     <nav
-      className="pointer-events-none invisible fixed inset-x-0 top-0 z-40 flex justify-center gap-6 py-4 font-sans text-ink text-sm opacity-0"
+      className="pointer-events-none invisible fixed inset-x-0 top-0 z-40 flex flex-wrap justify-center gap-x-4 gap-y-2 px-4 py-4 font-sans text-ink text-sm opacity-0 sm:gap-x-6"
       ref={navRef}
     >
       {links.map((link) => (

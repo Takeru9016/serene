@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Dancing_Script, Jost, Playfair_Display } from "next/font/google";
 import { AudioToggle } from "@/components/shared/audio-toggle";
+import { GrainOverlay } from "@/components/shared/grain-overlay";
 import { Nav } from "@/components/shared/nav";
 import "./globals.css";
 
@@ -32,7 +33,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${playfairDisplay.variable} ${jost.variable} ${dancingScript.variable} h-full antialiased`}
       lang="en"
     >
-      <body className="flex min-h-full flex-col">
+      <body className="flex min-h-full flex-col overflow-x-hidden">
+        <GrainOverlay />
         <Nav />
         {children}
         <AudioToggle />
