@@ -17,7 +17,7 @@ here.
 
 - [x] **Phase 2 — `/`**
 - [x] **Phase 3 — `/wishes`**
-- [ ] **Phase 4 — `/gift`** *(blocked — see CLAUDE.md open blockers)*
+- [x] **Phase 4 — `/gift`** *(built with placeholder content + polaroid frame — real gift/photo still pending, see CLAUDE.md open blockers)*
 - [ ] **Phase 5 — `/poetry`** *(blocked — copy pending)*
 - [ ] **Phase 6 — `/reasons`** *(blocked — copy pending)*
 - [ ] **Phase 7 — `/letter`**
@@ -39,5 +39,5 @@ here.
 
 ---
 
-**Active Task:** Phase 4 — `/gift` *(blocked — see CLAUDE.md open blockers)*
-**Last Completed:** Phase 3 — `/wishes`
+**Active Task:** Phase 5 — `/poetry` *(blocked — copy pending)*
+**Last Completed:** Phase 4 — `/gift`
