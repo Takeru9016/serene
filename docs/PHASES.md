@@ -20,7 +20,7 @@ here.
 - [x] **Phase 4 — `/gift`** *(built with placeholder content + polaroid frame — real gift/photo still pending, see CLAUDE.md open blockers)*
 - [ ] **Phase 5 — `/poetry`** *(blocked — copy pending)*
 - [ ] **Phase 6 — `/reasons`** *(blocked — copy pending)*
-- [ ] **Phase 7 — `/letter`**
+- [x] **Phase 7 — `/letter`**
 
 - [ ] **Phase 8 — Polish** *(only after all pages above are checked)*
   - [ ] Ambient grain + heading glow
@@ -39,5 +39,5 @@ here.
 
 ---
 
-**Active Task:** Phase 5 — `/poetry` *(blocked — copy pending)*
-**Last Completed:** Phase 4 — `/gift`
+**Active Task:** Phase 5 — `/poetry` and Phase 6 — `/reasons` *(both blocked — copy pending; Phase 8 Polish also blocked until these ship)*
+**Last Completed:** Phase 7 — `/letter`

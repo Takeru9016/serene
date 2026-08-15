@@ -57,8 +57,9 @@ staggered on scroll
 **Layout:** plain, generous whitespace, closing paragraph + signature
 **Interaction:** after content, "You've seen it all — look around ↓" line
 triggers the nav fade-in
-**Motif:** deliberately untouched — no glow, no texture beyond base grain, no
-music emphasis. The stillness here is the point.
+**Motif:** night motif only (faint star-speck field, same as Home) — no other
+glow or texture beyond base grain, no music emphasis. The stillness here is
+the point.
 
 ---
 

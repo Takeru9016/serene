@@ -58,5 +58,6 @@ export const letter = {
     "Happy birthday.",
   ],
   eyebrow: "one more thing",
+  revealCue: "You've seen it all — look around ↓",
   signature: "Dumbo",
 };
