@@ -62,6 +62,14 @@ export const reasons = {
   title: "Reasons I'm Not Letting You Go",
 };
 
+export const gate = {
+  button: "Enter →",
+  errorMessage: "That's not quite it — try again.",
+  placeholder: "Passcode",
+  subtitle: "This one's just for you.",
+  title: "Enter",
+};
+
 export const letter = {
   body: [
     "There's a lot I could say here, and most of it I've said in pieces already — in the wishes, in the reasons, in everything before this page. So I'll just say the part I don't usually say out loud.",

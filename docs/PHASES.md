@@ -31,14 +31,35 @@ here.
   - [x] Page-turn transition upgrade (optional)
 
 - [ ] **Phase 9 — Domain & Access** *(last, right before sending the link)*
+  - [x] Gate code built: `src/proxy.ts` (Next.js 16 renamed
+        `middleware.ts`/`middleware()` to `proxy.ts`/`proxy()` — same
+        cookie check + redirect to
+        `/gate?from=<path>`), `src/app/gate/page.tsx` (passcode form),
+        `src/app/api/gate/route.ts` (verifies passcode, sets `site-access`
+        cookie), `src/app/robots.ts` (disallow all), `.env.example`
+        (documents shape, no real values). `tsc --noEmit` and
+        `ultracite check` both pass clean on these files.
   - [ ] `GATE_PASSCODE` and `GATE_TOKEN` generated and set in Vercel
-  - [ ] Password gate tested end-to-end (wrong code fails, right code
-        persists across a refresh and across routes)
+  - [ ] Password gate tested end-to-end locally (`pnpm build` +
+        `pnpm start` with real env vars — not yet run this session) and
+        again after deploy (wrong code fails, right code persists across a
+        refresh and across routes)
   - [ ] `serene.serostudio.co` added in Vercel, CNAME added at the DNS
         provider, cert issued and verified
-  - [ ] `robots.ts` confirmed present and blocking crawling
+  - [x] `robots.ts` confirmed present and blocking crawling
 
 ---
 
-**Active Task:** Phase 9 — Domain & Access is next. Phase 8 is fully complete.
-**Last Completed:** Phase 8 — Polish, all 5 items (grain/glow, night motif, music toggle, responsive pass, restraint audit, page-turn transition)
+**Active Task:** Phase 9 — Domain & Access. Gate code is built and `/check`
+passed (tsc clean, copy sourced from `content.ts`, no improvised colors, no
+"I love you" string, no restraint-rule violations). Not yet verified: `/gate`
+end-to-end in an actual browser (wrong-code/right-code/refresh/cross-route) —
+`.env.local` now has test values, so restart `pnpm dev` and click through it.
+`docs/PAGES.md` has no mobile-layout spec for `/gate` since it's outside the
+story route chain — worth a manual mobile-width check but nothing to compare
+against. Next after that: generate real `GATE_PASSCODE`/`GATE_TOKEN` and set
+them in Vercel, then the `serene.serostudio.co` DNS/CNAME/cert steps — both
+require the Vercel dashboard and DNS provider, not something to do from here.
+**Last Completed:** Phase 9 gate code — `src/proxy.ts`, `/gate` page,
+`/api/gate` route, `robots.ts`, `.env.example`, plus the `.gitignore` fix
+(`.env*` was silently excluding `.env.example` from being committed at all).
