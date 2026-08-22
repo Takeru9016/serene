@@ -1,0 +1,42 @@
+{
+  "root": "scene",
+  "elements": {
+    "scene": {
+      "type": "Group",
+      "props": { "position": [0, 0, 0] },
+      "children": ["ambient", "goldRim", "envelope"]
+    },
+    "ambient": {
+      "type": "AmbientLight",
+      "props": { "intensity": 0.45 },
+      "children": []
+    },
+    "goldRim": {
+      "type": "PointLight",
+      "props": {
+        "position": [0, 1.2, 1.8],
+        "color": "#e0c285",
+        "intensity": 8,
+        "distance": 6,
+        "decay": 2
+      },
+      "children": []
+    },
+    "envelope": {
+      "type": "Envelope",
+      "props": {
+        "bodyColor": "#241531",
+        "flapColor": "#2c1a3d",
+        "sealColor": "#e0c285",
+        "open": { "$bindState": "/envelopeOpen" }
+      },
+      "children": [],
+      "on": {
+        "click": {
+          "action": "setState",
+          "params": { "statePath": "/envelopeOpen", "value": true }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "root": "scene",
+  "elements": {
+    "scene": {
+      "type": "Group",
+      "props": { "position": [0, 0, 0] },
+      "children": ["ambient", "violetRim", "letter"]
+    },
+    "ambient": {
+      "type": "AmbientLight",
+      "props": { "intensity": 0.4 },
+      "children": []
+    },
+    "violetRim": {
+      "type": "PointLight",
+      "props": {
+        "position": [0, 1, 2],
+        "color": "#b98fd1",
+        "intensity": 5,
+        "distance": 6,
+        "decay": 2
+      },
+      "children": []
+    },
+    "letter": {
+      "type": "FoldingLetter",
+      "props": {
+        "paperColor": "#ece0cf",
+        "sealColor": "#b98fd1",
+        "open": { "$bindState": "/letterOpen" }
+      },
+      "children": [],
+      "on": {
+        "click": {
+          "action": "setState",
+          "params": { "statePath": "/letterOpen", "value": true }
+        }
+      }
+    }
+  }
+}

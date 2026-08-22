@@ -1,7 +1,12 @@
 "use client";
 
 import { gsap } from "gsap";
-import { useCallback, useRef, useState } from "react";
+import dynamic from "next/dynamic";
+import { useCallback, useEffect, useRef, useState } from "react";
+
+const GiftScene = dynamic(() => import("@/components/three/gift-scene"), {
+  ssr: false,
+});
 
 function RibbonBow() {
   return (
@@ -25,35 +30,52 @@ function RibbonBow() {
 
 export function RibbonReveal({ children }: { children: React.ReactNode }) {
   const [revealed, setRevealed] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState<boolean | null>(null);
   const ribbonRef = useRef<HTMLButtonElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const query = window.matchMedia("(prefers-reduced-motion: reduce)");
+    setReducedMotion(query.matches);
+    const listener = (event: MediaQueryListEvent) => {
+      setReducedMotion(event.matches);
+    };
+    query.addEventListener("change", listener);
+    return () => query.removeEventListener("change", listener);
+  }, []);
+
+  const revealContent = useCallback(() => {
+    if (revealed) {
+      return;
+    }
+    setRevealed(true);
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, y: 16 },
+      { duration: 0.7, ease: "power2.out", opacity: 1, y: 0 }
+    );
+  }, [revealed]);
 
   const handleUnwrap = useCallback(() => {
     if (revealed) {
       return;
     }
-    setRevealed(true);
-
     const tl = gsap.timeline();
     tl.to(ribbonRef.current, {
       duration: 0.6,
       ease: "power2.in",
       opacity: 0,
       scale: 1.1,
-    }).fromTo(
-      contentRef.current,
-      { opacity: 0, y: 16 },
-      { duration: 0.7, ease: "power2.out", opacity: 1, y: 0 },
-      "-=0.15"
-    );
-  }, [revealed]);
+    });
+    revealContent();
+  }, [revealed, revealContent]);
 
   return (
     <div className="relative w-full">
       <div className="opacity-0" ref={contentRef}>
         {children}
       </div>
-      {!revealed && (
+      {!revealed && reducedMotion === true && (
         <button
           aria-label="Unwrap your gift"
           className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-bg/90"
@@ -66,6 +88,16 @@ export function RibbonReveal({ children }: { children: React.ReactNode }) {
             click to unwrap
           </span>
         </button>
+      )}
+      {!revealed && reducedMotion === false && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-bg/90">
+          <div className="h-56 w-72">
+            <GiftScene onOpen={revealContent} />
+          </div>
+          <span className="font-sans text-orchid text-sm uppercase tracking-[0.3em]">
+            click to unwrap
+          </span>
+        </div>
       )}
     </div>
   );

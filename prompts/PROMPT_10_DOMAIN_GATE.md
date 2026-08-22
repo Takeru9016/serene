@@ -1,6 +1,6 @@
-# Phase 9 — Domain & Access
+# Phase 10 — Domain & Access
 
-Paste into Claude Code once Phase 8 (Polish) is checked and committed.
+Paste into Claude Code once Phase 9 (Polish) is checked and committed.
 Infrastructure work, not page-building — happens last, right before you
 send the link.
 

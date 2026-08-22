@@ -35,14 +35,21 @@ export const gift = {
 // PLACEHOLDER — dummy copy for layout only. Do not draft this for real. It's
 // the user's own writing. See CLAUDE.md.
 export const poetry = {
-  body: `[stanza one — placeholder line, placeholder line, placeholder line]
-[placeholder line, placeholder line, placeholder line]
+  body: `Some people become a quiet part of your heart,
+not because they promise to stay,
+but because somewhere along the way,
+their presence changed you.
 
-[stanza two — placeholder line, placeholder line]
-[placeholder line, placeholder line, placeholder line, placeholder line]
+I may not always understand the distance,
+or the silence between a word and a reply,
+but I know this much—
+I never wanted to make you the villain
+just because my heart didn't know how to let go.
 
-[stanza three — placeholder line, placeholder line, placeholder line]
-[placeholder line, placeholder line]`, // one long poem, not multiple short ones — replace entirely
+So I'll learn to care without holding,
+to speak without fearing,
+and to stay—
+without asking you to stay the same.`, // one long poem, not multiple short ones — replace entirely
   eyebrow: "written for you",
   title: "[poem title placeholder]", // fill in once written
 };

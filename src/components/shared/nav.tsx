@@ -27,23 +27,46 @@ export function Nav() {
       return;
     }
 
-    const ctx = gsap.context(() => {
-      gsap.set(navRef.current, { pointerEvents: "none", visibility: "hidden" });
+    let ctx: gsap.Context | undefined;
 
-      gsap.to(navRef.current, {
-        duration: 1,
-        ease: "power2.out",
-        opacity: 1,
-        pointerEvents: "auto",
-        scrollTrigger: {
-          start: "top 90%",
-          trigger: "#letter-reveal",
-        },
-        visibility: "visible",
+    const createTrigger = () => {
+      ctx = gsap.context(() => {
+        gsap.set(navRef.current, {
+          pointerEvents: "none",
+          visibility: "hidden",
+        });
+
+        gsap.to(navRef.current, {
+          duration: 1,
+          ease: "power2.out",
+          opacity: 1,
+          pointerEvents: "auto",
+          scrollTrigger: {
+            start: "top 90%",
+            trigger: "#letter-reveal",
+          },
+          visibility: "visible",
+        });
       });
-    });
+    };
 
-    return () => ctx.revert();
+    if (document.querySelector("#letter-reveal")) {
+      createTrigger();
+      return () => ctx?.revert();
+    }
+
+    const observer = new MutationObserver(() => {
+      if (document.querySelector("#letter-reveal")) {
+        observer.disconnect();
+        createTrigger();
+      }
+    });
+    observer.observe(document.body, { childList: true, subtree: true });
+
+    return () => {
+      observer.disconnect();
+      ctx?.revert();
+    };
   }, [isLetter]);
 
   if (!isLetter) {

@@ -71,11 +71,23 @@ never be committed — `.env.example` documents the shape, not the values.
 - `docs/PAGES.md` — page-by-page spec: layout, copy status, interactions
 - `docs/DESIGN_RULES.md` — color tokens, type pairing, motif, animation rules
 - `docs/PHASES.md` — task tracker
-- `prompts/PROMPT_00_SETUP.md` through `PROMPT_08_POLISH.md` — one prompt per
-  phase, pasted into Claude Code in order as each prior phase is checked and
-  committed. Don't skip ahead to a later prompt if an earlier phase isn't
-  done — several later prompts assume content that only exists once an
-  earlier phase (or a copy blocker) is resolved.
+- `prompts/PROMPT_00_SETUP.md` through `PROMPT_10_DOMAIN_GATE.md` — one
+  prompt per phase, pasted into Claude Code in order as each prior phase is
+  checked and committed. Don't skip ahead to a later prompt if an earlier
+  phase isn't done — several later prompts assume content or infrastructure
+  that only exists once an earlier phase (or a copy blocker) is resolved.
+  Phase 8 (3D Elements) is a real scope increase added mid-project — see
+  `docs/DESIGN_RULES.md` for the reasoning, including the Letter-page
+  override of an earlier "stay plain" lock. That override was deliberate,
+  flagged, and confirmed — don't second-guess it, just don't let it creep
+  into re-adding effects elsewhere on that page.
+- `prompts/PROMPT_11_DARK_MODE.md` — a retrofit pass, run only after
+  Phases 0–10 are already complete. **Dark mode has no toggle — it fully
+  replaces the original light theme.** Color tokens in
+  `docs/DESIGN_RULES.md` are already updated to dark values; this prompt
+  covers what a token swap alone won't fix (3D scene lighting, the gate
+  page's hardcoded fallback hex, grain visibility, extending the night
+  motif site-wide).
 - `src/lib/content.ts` — single source of truth for all copy
 - `src/app/layout.tsx` — nav logic, audio element, font loading
 - `src/app/template.tsx` — page transition (fade, upgrade to page-turn slide

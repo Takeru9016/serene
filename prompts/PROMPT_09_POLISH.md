@@ -1,8 +1,9 @@
-# Phase 8 — Polish
+# Phase 9 — Polish
 
-Paste into Claude Code only after all 6 content pages (Home through Letter)
-are built and individually checked. Don't start this phase early — polish
-work on an unfinished page gets redone.
+Paste into Claude Code once Phase 8 (3D Elements) is checked and committed —
+or once you've made a deliberate call to stop adding 3D moments partway
+through Phase 8. Either way, don't start Polish before that decision is
+made; polish work on top of an in-progress 3D build gets redone.
 
 ---
 

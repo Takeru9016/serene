@@ -22,44 +22,78 @@ here.
 - [x] **Phase 6 — `/reasons`** *(built with placeholder numbered grid + bloom-in reveal — real reasons still pending, see CLAUDE.md open blockers)*
 - [x] **Phase 7 — `/letter`**
 
-- [x] **Phase 8 — Polish** *(only after all pages above are checked)*
-  - [x] Ambient grain + heading glow
-  - [x] Night motif on Home + Letter
-  - [x] Music toggle *(layout.tsx placement confirmed correct; `public/audio/ambient.mp3` now present, build confirmed clean)*
-  - [x] Responsive pass, all pages
-  - [x] Restraint audit *(Home + Poetry now run 2 concurrent ambient elements — NightMotif/poem-glow plus the new heading glow — by explicit decision to apply heading glow site-wide; see session note)*
-  - [x] Page-turn transition upgrade (optional)
+- [x] **Phase 8 — 3D Elements** *(replanned mid-project to use
+      `@json-render/core` + `@json-render/react-three-fiber` (JSON-spec-driven
+      declarative rendering) instead of hand-coded react-three-fiber — see
+      session notes. One 3D scene per page, each with its own custom catalog
+      component owning a GSAP timeline for the one-shot choreographed moment.)*
+  - [x] `@json-render/core`, `@json-render/react`,
+        `@json-render/react-three-fiber`, `three`, `@react-three/fiber`,
+        `@react-three/drei`, `gsap` installed
+  - [x] Home — 3D envelope/seal, click to open + reduced-motion fallback
+  - [x] Wishes — per-wish-card 3D motif (sprout/moon/hearts/spark/bloom),
+        activates as each card scrolls into view + reduced-motion fallback
+        *(added mid-session, beyond the original 5-scene scope)*
+  - [x] Gift — 3D ribbon-unwrap box + reduced-motion fallback
+  - [x] Poetry — 3D vertical unfurling scroll with the poem written on the
+        parchment + reduced-motion fallback
+  - [x] Reasons — rotating flower-in-glass motif on every card, motif on one
+        side/text on the other + reduced-motion fallback *(continuous spin on
+        all cards — a deliberate, flagged override of the one-moving-element
+        restraint rule, confirmed by request)*
+  - [x] Letter — 3D folded-letter unfold (new motif, distinct from the
+        Envelope/RibbonBox hinge mechanics) + reduced-motion fallback
+        *(overrides the original "stay plain" lock — see docs/DESIGN_RULES.md)*
+  - [x] Every 3D component confirmed dynamically imported (`ssr: false`),
+        not in the main bundle *(verified via `pnpm build` route/chunk output
+        after every scene)*
+  - [ ] Real mobile device test, not just desktop devtools throttling
 
-- [ ] **Phase 9 — Domain & Access** *(last, right before sending the link)*
-  - [x] Gate code built: `src/proxy.ts` (Next.js 16 renamed
-        `middleware.ts`/`middleware()` to `proxy.ts`/`proxy()` — same
-        cookie check + redirect to
-        `/gate?from=<path>`), `src/app/gate/page.tsx` (passcode form),
-        `src/app/api/gate/route.ts` (verifies passcode, sets `site-access`
-        cookie), `src/app/robots.ts` (disallow all), `.env.example`
-        (documents shape, no real values). `tsc --noEmit` and
-        `ultracite check` both pass clean on these files.
+- [ ] **Phase 9 — Polish** *(only after Phase 8 or a deliberate decision to
+      stop adding 3D moments)*
+  - [ ] Ambient grain + heading glow
+  - [ ] Night motif on Home + Letter
+  - [ ] Music toggle
+  - [ ] Responsive pass, all pages
+  - [ ] Page-turn transition upgrade (optional, 2D pages only)
+
+- [ ] **Phase 10 — Domain & Access** *(last, right before sending the link)*
   - [ ] `GATE_PASSCODE` and `GATE_TOKEN` generated and set in Vercel
-  - [ ] Password gate tested end-to-end locally (`pnpm build` +
-        `pnpm start` with real env vars — not yet run this session) and
-        again after deploy (wrong code fails, right code persists across a
-        refresh and across routes)
+  - [ ] Password gate tested end-to-end (wrong code fails, right code
+        persists across a refresh and across routes)
   - [ ] `serene.serostudio.co` added in Vercel, CNAME added at the DNS
         provider, cert issued and verified
-  - [x] `robots.ts` confirmed present and blocking crawling
+  - [ ] `robots.ts` confirmed present and blocking crawling
+
+- [ ] **Phase 11 — Dark Mode Retrofit** *(applied after Phases 0–10 were
+      already complete — this is a retrofit pass on a finished site, not
+      part of the original build order)*
+  - [x] `globals.css` `@theme` tokens updated to the dark values in
+        `docs/DESIGN_RULES.md`
+  - [x] Every page manually reviewed for contrast/legibility — a token
+        swap doesn't guarantee every component still reads correctly
+        *(checked all 6 routes live in-browser via Playwright: Home,
+        Wishes, Gift incl. unwrap, Poetry, Reasons, Letter incl. nav
+        scroll-reveal — no contrast issues, no console errors)*
+  - [x] `src/app/gate/page.tsx` inline style fallback hex values updated
+        (these don't come from the CSS tokens, they're hardcoded fallbacks)
+        *(checked — page has no hardcoded hex/inline style, uses token
+        classes only, nothing to change)*
+  - [x] Ambient grain overlay opacity re-checked by eye against the new
+        dark background *(5% confirmed fine against #150C1C across all
+        6 pages' screenshots, no change needed)*
+  - [x] Night motif (stars) extended to Wishes, Gift, Poetry, Reasons — not
+        just Home + Letter anymore
+  - [x] All six 3D scenes reviewed individually: background/transparency,
+        lighting intensity, and material visibility against the dark
+        background *(built against the dark palette from the start —
+        gold/violet accents, `lighten()` helper for surfaces that would
+        otherwise vanish into `--color-bg`, verified live via Playwright
+        screenshots for every scene)*
+  - [ ] Real device check, not just desktop — dark UIs can reveal contrast
+        issues on mobile screens that don't show up on a desktop monitor
 
 ---
 
-**Active Task:** Phase 9 — Domain & Access. Gate code is built and `/check`
-passed (tsc clean, copy sourced from `content.ts`, no improvised colors, no
-"I love you" string, no restraint-rule violations). Not yet verified: `/gate`
-end-to-end in an actual browser (wrong-code/right-code/refresh/cross-route) —
-`.env.local` now has test values, so restart `pnpm dev` and click through it.
-`docs/PAGES.md` has no mobile-layout spec for `/gate` since it's outside the
-story route chain — worth a manual mobile-width check but nothing to compare
-against. Next after that: generate real `GATE_PASSCODE`/`GATE_TOKEN` and set
-them in Vercel, then the `serene.serostudio.co` DNS/CNAME/cert steps — both
-require the Vercel dashboard and DNS provider, not something to do from here.
-**Last Completed:** Phase 9 gate code — `src/proxy.ts`, `/gate` page,
-`/api/gate` route, `robots.ts`, `.env.example`, plus the `.gitignore` fix
-(`.env*` was silently excluding `.env.example` from being committed at all).
+**Active Task:** Phase 9 — Polish
+**Last Completed:** Phase 8 — 3D Elements (all 6 scenes)
